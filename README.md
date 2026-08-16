@@ -1,3 +1,7 @@
+LETOP !!! deze is nog in de testfase
+
+
+
 # 📡 RTL-SDR Multi-Protocol Monitor
 
 Web-based GUI voor het monitoren van meerdere radio-protocollen met een RTL-SDR ontvanger op Linux.
