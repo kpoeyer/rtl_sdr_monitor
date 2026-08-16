@@ -12,9 +12,9 @@ Web-based GUI voor het monitoren van meerdere radio-protocollen met een RTL-SDR 
 |----------|-----------|--------------|
 | ✈ **ADS-B** | 1090 MHz | Vliegtuig tracking (dump1090) |
 | 🚢 **AIS** | 161.975 / 162.025 MHz | Scheepvaart tracking |
-| 📝 **ACARS** | 131.550 MHz | Vliegtuig communicatie |
+| 📝 **ACARS** | 131.550 MHz / 131.725 MHz | Vliegtuig communicatie |
 | 🚨 **P2000** | 169.650 MHz | Nederlandse hulpdiensten |
-| 📟 **POCSAG** | 169.650 MHz | Semafoon netwerk |
+| 📟 **POCSAG** | 172.650 MHz | Semafoon netwerk |
 | 📡 **ERMES** | 169.450 MHz | Europees semafoonsysteem |
 
 ## Installatie
