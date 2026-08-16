@@ -1,0 +1,65 @@
+{
+  "rtl_sdr": {
+    "gain": "auto",
+    "ppm": 0,
+    "bias_tee": false
+  },
+  "decoders": {
+    "adsb": {
+      "enabled": true,
+      "frequency": 1090000000,
+      "command": "dump1090",
+      "args": ["--net", "--net-ro-size", "500", "--net-ro-rate", "5", "--aggressive", "--interactive"],
+      "port": 30003,
+      "description": "ADS-B (1090 MHz) - Aircraft tracking"
+    },
+    "acars": {
+      "enabled": true,
+      "frequencies": [131550000, 131725000, 130025000],
+      "command": "acarsdec",
+      "args": ["-o", "2", "-r", "0"],
+      "description": "ACARS (131.550 MHz) - Aircraft communications"
+    },
+    "ais": {
+      "enabled": true,
+      "frequencies": [161975000, 162025000],
+      "command": "rtl_ais",
+      "args": ["-n", "8100"],
+      "description": "AIS (161.975/162.025 MHz) - Ship tracking"
+    },
+    "pocsag": {
+      "enabled": true,
+      "frequency": 169650000,
+      "command": "rtl_fm",
+      "args": ["-M", "fm", "-s", "22050", "-l", "0"],
+      "pipe_to": ["multimon-ng", "-t", "raw", "-a", "POCSAG", "-"],
+      "description": "POCSAG (169.650 MHz) - Paging network"
+    },
+    "p2000": {
+      "enabled": true,
+      "frequency": 169650000,
+      "command": "rtl_fm",
+      "args": ["-M", "fm", "-s", "22050", "-l", "0"],
+      "pipe_to": ["multimon-ng", "-t", "raw", "-a", "POCSAG", "-"],
+      "description": "P2000 (169.650 MHz) - Dutch emergency services"
+    },
+    "ermes": {
+      "enabled": true,
+      "frequency": 169450000,
+      "command": "rtl_fm",
+      "args": ["-M", "fm", "-s", "12500"],
+      "pipe_to": ["multimon-ng", "-t", "raw", "-a", "ERMES", "-"],
+      "description": "ERMES (169.450 MHz) - European paging"
+    }
+  },
+  "map": {
+    "center_lat": 51.65,
+    "center_lon": 4.55,
+    "zoom": 9,
+    "tile_provider": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  },
+  "simulation": {
+    "enabled": true,
+    "interval_ms": 3000
+  }
+}
